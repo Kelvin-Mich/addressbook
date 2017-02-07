@@ -3,3 +3,11 @@ install:
 - mvn install
 jdk:
 - oraclejdk8
+deploy:
+  provider: heroku
+  api_key:
+    secure: B6JEyScLdN6ETdI3XfE3du3yIVy4kiVGs7BLiPXnOG/XCSSQjMcaxb0bYjPw0TsxaLlO9ulszfnCBY/nuQ/11caTq5U6AllIEEamh/kwju80x+amsgmbTOzCzpupul2IpO2MlHn/FOE5uabfSQNRY36+dmqRb6CeBrSdpM+rLdQsIUy8XtvbHUiXujsl4bxPutFWBm1e/TEHX+/ypXl1QKBedejC4N38+Gj5okGQPQjYvudUxuBUckvROQnC4UhL2GPLD2HPgs4N5y5y0SJ3NLIYtUbgX/6L+QfBXWBkh7W/upK2JAP2+v92C+AYWX/DaNs/6pU2E5u3k9NGtSrwZ+z/fEpOUcso3C5pLLq2mLlZ0GM4UIl34/Jeo+20pk1Eoup6cmox6O6+EjhMyRec9u5YqpcUNCRuFFZxzfQiJoxDzNUYPNPAqkUK4nFwwvdFE1mRdSDs4j8ZBmdEOcirKAu2fWHFsKXpF5gHo08zq7vbqL43JtkF9KdYWbuqAvk2b/11s89WmfMAx6zieezoKqevH469FweOypuUY7Phs2l6rtAQmZ2cPjH+NCW5RMqPq3+dOZdU5234Vrq9QQXuFCiZjSlcoAbOd5fr1juUjqK/B4Q3nWXLH2f6og2TGASJa9Too2O4IQcmPgynqbAE4tvbnZfh7fCqKoKK9kUmjH8=
+  app: mich-addressbook
+  on:
+    repo: Kelvin-Mich/addressbook
+    branch: todo_tasks
