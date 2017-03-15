@@ -23,7 +23,7 @@ import com.vaadin.v7.ui.TextField;
  */
 public class ContactForm extends FormLayout {
 
-    Button save = new Button("Save", this::save);
+    Button jSave = new Button("Save", this::save);
     Button cancel = new Button("Cancel", this::cancel);
     TextField firstName = new TextField("First name");
     TextField lastName = new TextField("Last name");
@@ -48,8 +48,8 @@ public class ContactForm extends FormLayout {
          * With Vaadin built-in styles you can highlight the primary save button
          * and give it a keyboard shortcut for a better UX.
          */
-        save.setStyleName(ValoTheme.BUTTON_PRIMARY);
-        save.setClickShortcut(ShortcutAction.KeyCode.ENTER);
+        jSave.setStyleName(ValoTheme.BUTTON_PRIMARY);
+        jSave.setClickShortcut(ShortcutAction.KeyCode.ENTER);
         setVisible(false);
     }
 
@@ -57,7 +57,7 @@ public class ContactForm extends FormLayout {
         setSizeUndefined();
         setMargin(true);
 
-        HorizontalLayout actions = new HorizontalLayout(save, cancel);
+        HorizontalLayout actions = new HorizontalLayout(jSave, cancel);
         actions.setSpacing(true);
 
         addComponents(actions, firstName, lastName, phone, email, birthDate);
