@@ -36,7 +36,7 @@ public class AddressbookUI extends UI {
      * com.vaadin.ui package and there are over 500 more in
      * vaadin.com/directory.
      */
-    TextField filter = new TextField();
+    TextField jFilter = new TextField();
     Grid contactList = new Grid();
     Button newContact = new Button("New contact");
 
@@ -71,8 +71,8 @@ public class AddressbookUI extends UI {
          */
         newContact.addClickListener(e -> contactForm.edit(new Contact()));
 
-        filter.setInputPrompt("Filter contacts...");
-        filter.addTextChangeListener(e -> refreshContacts(e.getText()));
+        jFilter.setInputPrompt("Filter contacts...");
+        jFilter.addTextChangeListener(e -> refreshContacts(e.getText()));
 
         contactList
                 .setContainerDataSource(new BeanItemContainer<>(Contact.class));
@@ -98,10 +98,10 @@ public class AddressbookUI extends UI {
      * choose to setup layout declaratively with Vaadin Designer, CSS and HTML.
      */
     private void buildLayout() {
-        HorizontalLayout actions = new HorizontalLayout(filter, newContact);
+        HorizontalLayout actions = new HorizontalLayout(jFilter, newContact);
         actions.setWidth("100%");
-        filter.setWidth("100%");
-        actions.setExpandRatio(filter, 1);
+        jFilter.setWidth("100%");
+        actions.setExpandRatio(jFilter, 1);
 
         VerticalLayout left = new VerticalLayout(actions, contactList);
         left.setSizeFull();
@@ -125,7 +125,7 @@ public class AddressbookUI extends UI {
      * MVC, MVP or any other design pattern you choose.
      */
     void refreshContacts() {
-        refreshContacts(filter.getValue());
+        refreshContacts(jFilter.getValue());
     }
 
     private void refreshContacts(String stringFilter) {
